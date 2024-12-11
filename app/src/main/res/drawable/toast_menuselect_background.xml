@@ -1,0 +1,10 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 아래쪽 긴 직사각형 (아래만 둥글게 처리) -->
+    <item android:left="0dp" android:right="0dp" android:top="0dp" android:bottom="0dp">
+        <shape>
+            <solid android:color="@color/white" /> <!-- 빛 색상 -->
+            <corners android:radius="6dp" /> <!-- 아래쪽만 둥글게 처리 -->
+            <size android:height="50dp" android:width="80dp" /> <!-- 긴 직사각형 크기 -->
+        </shape>
+    </item>
+</layer-list>

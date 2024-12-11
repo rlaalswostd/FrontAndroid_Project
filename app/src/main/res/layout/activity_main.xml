@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/ssssss"
+        tools:context=".MainActivity">
+
+        <!-- 로고 이미지 -->
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="224dp"
+            android:layout_height="148dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/neworderlogo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 메뉴판 텍스트 -->
+
+        <!-- 하나의 RecyclerView로 카테고리 및 메뉴 표시 -->
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="500dp"
+            android:layout_height="89dp"
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="56dp"
+            android:fontFamily="@font/menunamefont"
+            android:gravity="center"
+            android:text="주문을 해주세요"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            app:layout_constraintStart_toEndOf="@id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="1007dp"
+            android:layout_height="642dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.936"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="176dp"
+            android:background="@drawable/cart_btn"
+            android:drawableStart="@drawable/ic_cart"
+            android:padding="10dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text=" 장바구니"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/billBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="176dp"
+            android:background="@drawable/cart_btn"
+            android:drawableStart="@drawable/billge"
+            android:padding="10dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text=" 주문내역"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cartButton" />
+
+        <TextView
+            android:id="@+id/tableNumber"
+            android:layout_width="101dp"
+            android:layout_height="145dp"
+            android:layout_marginEnd="48dp"
+            android:background="@drawable/tablenumberback"
+            android:fontFamily="@font/menunamefont"
+            android:gravity="center"
+            android:text="테이블 넘버"
+            android:textColor="@color/white"
+            android:textSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/storeNameTextView"
+            android:layout_width="237dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mainstore_back"
+            android:breakStrategy="simple"
+            android:fontFamily="@font/menunamefont"
+            android:gravity="center_vertical|center_horizontal"
+            android:padding="5px"
+            android:scrollHorizontally="false"
+            android:text="스토어이름"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+
+        <!--        카테고리 엘리베이터 =====================-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoryRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/recyclerView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/storeNameTextView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--장바구니-->
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+        <!-- 장바구니 목록 RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <!-- 품목-->
+            <TextView
+                android:id="@+id/orderDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/menunamefont"
+                android:gravity="start"
+                android:text="품목"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <!--            토탈-->
+            <TextView
+                android:id="@+id/totalPriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/menunamefont"
+                android:gravity="end"
+                android:text="원"
+                android:textColor="@color/sigu"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <!-- 주문 완료 버튼 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/closeCartButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/gray"
+                android:fontFamily="@font/menunamefont"
+                android:text="닫기"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/orderButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/btn_background"
+                android:enabled="false"
+                android:fontFamily="@font/menunamefont"
+                android:text="주문하기"
+                android:textColor="@color/btn_text_color" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 주문내역 표시 슬라이드 바 //// width 부분 나중에 줄여서 바꿀것 300dp 이상-->
+    <LinearLayout
+        android:id="@+id/orderHistoryPanel"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <!--   머릿말 -->
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f7f7f7"
+            android:fontFamily="@font/orderfontbold"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:text="※ 주문 내역 ※"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <!-- 주문 시간 -->
+        <TextView
+            android:id="@+id/orderTimeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f7f7f7"
+            android:fontFamily="@font/orderfont"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:text="마지막주문시간: "
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <!--        divider-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <!-- 항목 제목 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/orderfontbold"
+                android:gravity="left"
+                android:paddingStart="16dp"
+                android:text="항목"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/orderfontbold"
+                android:gravity="right"
+                android:text="수량"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/orderfontbold"
+                android:gravity="right"
+                android:paddingEnd="16dp"
+                android:text="가격"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!--        divider-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="8dp"
+            android:background="@color/black" />
+
+
+        <!--       주문내역 아이템들이 표시될 리사이클러뷰-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orderHistoryRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="0dp" />
+
+        <!-- 주문 정보 영역 -->
+        <LinearLayout
+            android:id="@+id/orderInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F5F5F5"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/orderfont"
+                android:gravity="left"
+                android:paddingStart="10dp"
+                android:text="TOTAL"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- 총 금액 -->
+            <TextView
+                android:id="@+id/totalAmountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/orderfontbold"
+                android:text="총 금액: "
+                android:textColor="@color/sigu"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <!-- Close button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/closeOrderHistoryButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/gray"
+                android:fontFamily="@font/menunamefont"
+                android:text="닫기"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/payCallBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/btn_background"
+                android:enabled="true"
+                android:fontFamily="@font/menunamefont"
+                android:text="계산할게요"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
+

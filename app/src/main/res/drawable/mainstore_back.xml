@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#ff5e00"
+                android:endColor="#000000"
+                android:gradientRadius="990dp"
+                android:type="radial"
+                />
+
+            <!-- TextView의 크기에 맞게 자동 조정 -->
+            <corners
+                android:topRightRadius="10dp"
+                android:bottomRightRadius="10dp" />
+        </shape>
+    </item>
+</selector>

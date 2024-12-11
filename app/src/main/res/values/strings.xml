@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NewOrderApp</string>
+<!--  <string name="base_url">http://10.100.103.23:8807/</string>-->
+<!--    <string name="base_url">http://118.47.27.186:8807/</string>-->
+<!--    <string name="base_url">http://10.100.103.28:8807/</string>-->.
+    <string name="base_url">http://10.100.103.24:8807/</string>
+<!--    <string name="base_url">http://10.100.103.37:8807/</string>-->
+
+
+</resources>

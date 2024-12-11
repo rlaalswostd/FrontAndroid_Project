@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- 삭제 아이콘 -->
+        <ImageButton
+            android:id="@+id/deleteMenu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="78dp"
+            android:adjustViewBounds="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Delete"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_delete" />
+
+        <!-- 메뉴 이름 -->
+        <TextView
+            android:id="@+id/menuName"
+            android:fontFamily="@font/cart"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:text="Menu Name"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/deleteMenu"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <!-- 메뉴 가격 -->
+        <TextView
+            android:id="@+id/menuPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:textSize="17sp"
+            android:fontFamily="@font/cart"
+            android:textColor="@color/sigu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/menuName" />
+
+        <!-- 수량 조절 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/menuPrice">
+
+            <!-- - 버튼 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/decreaseButton"
+                android:layout_gravity="center"
+                android:layout_width="70sp"
+                android:layout_height="50sp"
+                android:background="@drawable/item_cart_btn"
+                android:text="-"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="30sp" />
+
+            <!-- 수량 표시 -->
+            <TextView
+                android:id="@+id/quantity"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/cart"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="9"
+                android:textSize="45sp" />
+
+            <!-- + 버튼 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/increaseButton"
+                android:layout_gravity="center"
+                android:layout_width="70sp"
+                android:layout_height="50sp"
+                android:layout_marginLeft="20sp"
+                android:background="@drawable/item_cart_btn"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="30sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 투명 배경 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent"/> <!-- 투명 배경 -->
+        </shape>
+    </item>
+
+    <!-- 아래쪽 줄 -->
+    <item android:gravity="bottom">
+        <shape android:shape="rectangle">
+            <size android:height="2dp"/> <!-- 줄의 두께 -->
+            <solid android:color="#FFFFFF"/> <!-- 줄의 색깔 -->
+        </shape>
+    </item>
+
+    <!-- 오른쪽 줄 (높이 절반 30dp) -->
+    <item android:gravity="end|bottom"> <!-- 오른쪽 끝으로 배치하고 세로로 중앙 정렬 -->
+        <shape android:shape="rectangle">
+            <size android:width="2dp" android:height="30dp"/> <!-- 오른쪽 줄의 높이 30dp -->
+            <solid android:color="#FFFFFF"/> <!-- 줄의 색깔 -->
+        </shape>
+    </item>
+</layer-list>

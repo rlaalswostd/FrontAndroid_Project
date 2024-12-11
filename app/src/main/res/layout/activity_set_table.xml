@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/tableNumberEditText"
+        android:layout_width="match_parent"
+        android:layout_height="122dp"
+        android:hint="테이블 번호 입력"
+        android:textSize="50dp"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="600px"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:textSize="50dp"
+        android:text="저장" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="사장님~ 저장후 앱을 재실행 해주세요 !!"
+        android:textSize="40dp"
+        android:textColor="#FB2424" />
+</LinearLayout>

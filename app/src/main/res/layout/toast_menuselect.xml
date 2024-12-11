@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/toast_menuselect_background">
+
+       <!-- 텍스트와 아이콘을 가로로 배치 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 첫 번째 아이콘 -->
+        <ImageView
+            android:id="@+id/toast_icon"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/toasticon1" />
+
+        <!-- 텍스트 -->
+        <TextView
+            android:id="@+id/toast_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/menufont"
+            android:maxLines="2"
+            android:text="안녕"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <!-- 두 번째 아이콘 -->
+        <ImageView
+            android:id="@+id/toast_icon2"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/toasticon2" />
+    </LinearLayout>
+</LinearLayout>
